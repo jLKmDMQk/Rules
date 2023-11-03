@@ -1,0 +1,58 @@
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "0 16 * * *"
+
+env:
+  TZ: Asia/Shanghai
+  ENV_BRANCHS: "list,smartdns,surge,routeros"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Create directory
+        working-directory: ${{ github.workspace }}
+        run: |
+          IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
+          for branch in "${BRANCHS[@]}"; do
+            mkdir ${branch}
+          done
+
+      - name: Handle Data
+        working-directory: ${{ github.workspace }}
+        run: |
+          chmod +x ./Scripts/main.sh
+          ./Scripts/main.sh
+
+      - name: Git push assets to branchs
+        run: |
+          IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
+          for branch in "${BRANCHS[@]}"; do
+              cd ${branch} || exit 1
+              git init
+              git config --local user.name "github-actions[bot]"
+              git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git checkout -b ${branch}
+              git add .
+              git commit -m "`date '+%Y%m%d%H%M'`"
+              git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+              git push -f -u origin ${branch}
+              cd ..
+          done
+
+      - name: Purge jsdelivr CDN
+        run: |
+          IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
+          for branch in "${BRANCHS[@]}"; do
+              cd ${branch} || exit 1
+              for file in $(ls); do
+                curl -sSL "https://purge.jsdelivr.net/gh/${{ github.repository }}@${branch}/${file}"
+              done
+              cd ..
+          done
