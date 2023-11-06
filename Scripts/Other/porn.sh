@@ -3,16 +3,8 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 
 source ./Scripts/base.sh
 
-rule_providers_urls=(
-    "https://rules.kr328.app/boboporn.yaml"
-    "https://rules.kr328.app/category-porn.yaml"
-    "https://rules.kr328.app/cavporn.yaml"
-    "https://rules.kr328.app/dmm-porn.yaml"
-    "https://rules.kr328.app/mindgeek-porn.yaml"
-    "https://rules.kr328.app/pornhub.yaml"
-    "https://rules.kr328.app/pornpros.yaml"
-    "https://rules.kr328.app/theporndude.yaml"
-    "https://rules.kr328.app/youporn.yaml"
+v2ray_dat_urls=(
+    "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/category-porn"
 )
 
 rule_set_urls=(
@@ -26,8 +18,8 @@ for url in "${rule_set_urls[@]}"; do
 done
 sort_and_deduplicate "$domain_2_raw_list_file" "$domain_raw_list_file"
 
-for url in "${rule_providers_urls[@]}"; do
-    handle_clash_domain_rule_providers "$url" "$domain_raw_file" "$domain_raw_list_file"
+for url in "${v2ray_dat_urls[@]}"; do
+    handle_v2ray_geosite_dat "$url" "$domain_raw_file" "$domain_raw_list_file"
 done
 
 sort_and_deduplicate "$domain_raw_list_file" "$domain_list_file"

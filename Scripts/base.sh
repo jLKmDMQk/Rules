@@ -83,3 +83,20 @@ function handle_clash_domain_rule_providers() {
 
     grep "\-\ " $source_file_path | sed 's/"//g' | sed "s/'//g" | sed 's/- +//' | sed 's/- //' >>$target_file_path
 }
+
+function handle_v2ray_geosite_dat() {
+    url="$1"
+    source_file_path="$2"
+    target_file_path="$3"
+
+    download_file "$url" "$source_file_path"
+
+    cat $source_file_path |
+        grep -E -v "^include:.*" |
+        grep -E -v "^regexp:" |
+        grep -E -v "^#.*" |
+        grep -v "^[[:space:]]*$" |
+        grep -E -v "^[a-zA-Z]+$" |
+        sed "s/^/./g" |
+        sed "s/\.full://g" >>$target_file_path
+}
