@@ -23,7 +23,10 @@ def extract_rule_set_urls(content):
 def fetch_rule_urls(rule_set_urls):
     rule_urls = []
     headers = {"Authorization": f'token {os.environ.get("GITHUB_API_TOKEN")}'}
-    response = requests.get("https://api.github.com/repos/blackmatrix7/ios_rule_script/contents/rule/Clash?ref=master", headers=headers)
+    response = requests.get(
+        "https://api.github.com/repos/blackmatrix7/ios_rule_script/contents/rule/Clash?ref=master",
+        headers=headers,
+    )
     if response.status_code == 200:
         try:
             data = response.json()
@@ -397,7 +400,10 @@ def fetch_rule_urls(rule_set_urls):
                 for item in data:
                     if "path" in item:
                         path = item["path"] + "/"
-                        if not any(url for url in rule_set_urls if path in url) and path not in ignore_paths:
+                        if (
+                            not any(url for url in rule_set_urls if path in url)
+                            and path not in ignore_paths
+                        ):
                             rule_urls.append(item["html_url"])
         except json.JSONDecodeError:
             pass
