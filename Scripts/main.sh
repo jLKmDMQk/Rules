@@ -16,9 +16,10 @@ scripts=(
     "Other/porn.sh"
 )
 
+pip3 install -r ./Scripts/requirements.txt
+
 for script in ${scripts[@]}; do
     script_file="./Scripts/$script"
     chmod +x $script_file
-    pip3 install -r ./Scripts/requirements.txt
     $script_file
 done
