@@ -4,7 +4,7 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 scripts=(
     "china-ip.sh"
     "cmcc-ip.sh"
-    "onedrive.py"
+    "SharePoint.py"
     "China/china.sh"
     "Overseas/overseas.sh"
     "Sites/360.sh"
