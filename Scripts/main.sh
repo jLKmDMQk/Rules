@@ -4,6 +4,7 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 scripts=(
     "china-ip.sh"
     "cmcc-ip.sh"
+    "onedrive.py"
     "China/china.sh"
     "Overseas/overseas.sh"
     "Sites/360.sh"
@@ -18,5 +19,6 @@ scripts=(
 for script in ${scripts[@]}; do
     script_file="./Scripts/$script"
     chmod +x $script_file
+    pip3 install -r ./Scripts/requirements.txt
     $script_file
 done

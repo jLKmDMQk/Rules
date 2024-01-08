@@ -2,7 +2,7 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 rule_set_urls=(
-    "https://raw.githubusercontent.com/LisonFan/Rules/main/Rules/china-sites.list"
+    "https://raw.githubusercontent.com/jLKmDMQk/Rules/master/Rules/china-sites.list"
 
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/115/115.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/12306/12306.list"
