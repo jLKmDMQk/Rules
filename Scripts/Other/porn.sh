@@ -10,6 +10,7 @@ v2ray_dat_urls=(
 rule_set_urls=(
     "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list"
     "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Porn.list"
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Japonx/Japonx.list"
 )
 
 domain_2_raw_list_file="$temp_dir/domain.2.raw.list"
