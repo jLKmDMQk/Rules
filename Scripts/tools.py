@@ -120,6 +120,7 @@ def fetch_rule_urls(rule_set_urls):
                     "rule/Clash/Privacy/",
                     "rule/Clash/PrivateTracker/",
                     "rule/Clash/Proxy/",
+                    "rule/Clash/ProxyLite/",
                     "rule/Clash/QuickConnect/",
                     "rule/Clash/README.md/",
                     "rule/Clash/RemoteDesktop/",
