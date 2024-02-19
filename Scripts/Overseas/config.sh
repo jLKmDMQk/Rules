@@ -206,7 +206,6 @@ rule_set_urls=(
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrimeVideo/PrimeVideo.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Protonmail/Protonmail.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ProxyLite/ProxyLite.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pubmatic/Pubmatic.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Purikonejp/Purikonejp.list"
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Python/Python.list"
