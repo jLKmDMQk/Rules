@@ -16,6 +16,13 @@ function sites_common_handle() {
         done
     fi
 
+    if [ ${#geosite_filenames[@]} -gt 0 ]; then
+        for filename in "${geosite_filenames[@]}"; do
+            ./Scripts/geosite.py "$filename" > "$domain_raw_file"
+            handle_rule_set_to_domain_list "" "$domain_raw_file" "$domain_raw_list_file"
+        done
+    fi
+
     sort_and_deduplicate "$domain_raw_list_file" "$domain_list_file"
 
     cp "$domain_list_file" $target_1_file
