@@ -15,7 +15,11 @@ function download_file() {
     fi
 
     if [ -n "$url" ]; then
-      wget -q -O "$file_path" "$url"
+      if [[ $url =~ ^https?:// ]]; then
+        wget -q -O "$file_path" "$url"
+      else
+        cat "./ios_rule_script/rule/$url" > "$file_path"
+      fi
     fi
 }
 

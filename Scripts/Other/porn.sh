@@ -11,7 +11,8 @@ geosite_filenames=(
 rule_set_urls=(
     "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list"
     "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Porn.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Japonx/Japonx.list"
+
+    "Clash/Japonx/Japonx.list"
 )
 
 sites_common_handle "./surge/porn-site-domain.list" "./surge/porn-site-ruleset.list" "./list/porn-site.list"

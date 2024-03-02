@@ -5,19 +5,19 @@ source ./Scripts/base.sh
 source ./Scripts/Sites/common.sh
 
 rule_set_urls=(
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AliPay/AliPay.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/CaiNiao/CaiNiao.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DingTalk/DingTalk.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/FeiZhu/FeiZhu.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GaoDe/GaoDe.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HeMa/HeMa.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UC/UC.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XianYu/XianYu.list"
+    "Clash/AliPay/AliPay.list"
+    "Clash/Alibaba/Alibaba.list"
+    "Clash/CaiNiao/CaiNiao.list"
+    "Clash/DingTalk/DingTalk.list"
+    "Clash/FeiZhu/FeiZhu.list"
+    "Clash/GaoDe/GaoDe.list"
+    "Clash/HeMa/HeMa.list"
+    "Clash/UC/UC.list"
+    "Clash/XianYu/XianYu.list"
 )
 
 geosite_filenames=(
-    "alibaba"
+    "alibaba@all"
 )
 
 sites_common_handle "./surge/alibaba-domain.list" "./surge/alibaba-ruleset.list" "./list/ali-site.list"

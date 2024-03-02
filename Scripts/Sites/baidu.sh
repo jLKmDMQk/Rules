@@ -5,12 +5,12 @@ source ./Scripts/base.sh
 source ./Scripts/Sites/common.sh
 
 rule_set_urls=(
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BaiDuTieBa/BaiDuTieBa.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Baidu/Baidu.list"
+    "Clash/BaiDuTieBa/BaiDuTieBa.list"
+    "Clash/Baidu/Baidu.list"
 )
 
 geosite_filenames=(
-    "baidu"
+    "baidu@all"
 )
 
 sites_common_handle "./surge/baidu-domain.list" "./surge/baidu-ruleset.list" "./list/baidu-site.list"

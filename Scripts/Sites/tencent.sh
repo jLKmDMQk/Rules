@@ -5,13 +5,13 @@ source ./Scripts/base.sh
 source ./Scripts/Sites/common.sh
 
 rule_set_urls=(
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TencentVideo/TencentVideo.list"
-    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.list"
+    "Clash/Tencent/Tencent.list"
+    "Clash/TencentVideo/TencentVideo.list"
+    "Clash/WeChat/WeChat.list"
 )
 
 geosite_filenames=(
-    "tencent"
+    "tencent@all"
 )
 
 sites_common_handle "./surge/tencent-domain.list" "./surge/tencent-ruleset.list" "./list/tencent-site.list"

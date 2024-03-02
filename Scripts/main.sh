@@ -19,6 +19,7 @@ scripts=(
 pip3 install -r ./Scripts/requirements.txt
 
 git clone --depth=1 https://github.com/v2fly/domain-list-community.git
+git clone --depth=1 https://github.com/blackmatrix7/ios_rule_script.git
 
 for script in "${scripts[@]}"; do
     script_file="./Scripts/$script"
