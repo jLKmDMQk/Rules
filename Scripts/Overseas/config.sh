@@ -295,3 +295,7 @@ rule_set_urls=(
 domain_list_urls=(
     "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
 )
+
+geosite_filenames=(
+    "geolocation-!cn@!cn"
+)

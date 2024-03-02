@@ -18,7 +18,7 @@ def main():
     args = parser.parse_args()
 
     include_list.append(args.filename.split('@')[0])
-    no_fliter = args.filename.split('@')[-1] == "all"
+    category = args.filename.split('@')[-1]
 
     while len(include_list) > 0:
         filename = include_list.pop()
@@ -32,9 +32,18 @@ def main():
                 include_list.append(line.split(':')[-1].split(' ')[0])
             elif (not line.startswith('keyword:') and
                   not line.startswith('regexp:') and
-                  (no_fliter or not line.endswith(' @!cn')) and
                   not line.startswith('#') and
                   line.strip() != ''):
+
+                if category == "all":
+                    pass
+                elif category == "@!cn":
+                    if line.endswith(" @cn"):
+                        continue
+                else:
+                    if line.endswith(" @!cn"):
+                        continue
+
                 site = line.split(' ')[0]
                 if len(site.split(':')) > 1:
                     if site.startswith('domain:'):
