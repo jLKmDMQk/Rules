@@ -2,11 +2,9 @@
 
 from typing import List
 
-import requests
 import argparse
-import sys
 
-BASE_URL = "https://raw.githubusercontent.com/v2fly/domain-list-community/master/data/"
+BASE_FILE_PATH = "./domain-list-community/data"
 
 site_list: List[str] = []
 include_list: List[str] = []
@@ -22,11 +20,9 @@ def main():
 
     while len(include_list) > 0:
         filename = include_list.pop()
-        r = requests.get(BASE_URL + filename)
-        if r.status_code != 200:
-            print(f"Error: {r.status_code} url: {r.url}")
-            sys.exit(1)
-        lines = r.text.split('\n')
+        with open(f"{BASE_FILE_PATH}/{filename}", "r") as f:
+            r = f.read()
+        lines = r.split('\n')
         for line in lines:
             if line.startswith('include:'):
                 include_list.append(line.split(':')[-1].split(' ')[0])

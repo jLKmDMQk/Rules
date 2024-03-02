@@ -18,6 +18,8 @@ scripts=(
 
 pip3 install -r ./Scripts/requirements.txt
 
+git clone --depth=1 https://github.com/v2fly/domain-list-community.git
+
 for script in "${scripts[@]}"; do
     script_file="./Scripts/$script"
     chmod +x "$script_file"
