@@ -1,61 +1,9 @@
 #!/usr/bin/env bash
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
-geosite_filenames=(
-    "9news@!cn"
-    "9to5@!cn"
-    "akamai@!cn"
-    "amazon@!cn"
-    "appledaily@!cn"
-    "bbc@!cn"
-    "category-cryptocurrency@!cn"
-    "category-porn@!cn"
-    "cbs@!cn"
-    "cisco@!cn"
-    "cloudflare@!cn"
-    "clubhouse@!cn"
-    "cnn@!cn"
-    "digitalocean@!cn"
-    "electron@!cn"
-    "facebook@!cn"
-    "fox@!cn"
-    "gitbook@!cn"
-    "github@!cn"
-    "google@!cn"
-    "hbo@!cn"
-    "hkbn@!cn"
-    "hulu@!cn"
-    "imdb@!cn"
-    "imgur@!cn"
-    "instagram@!cn"
-    "jfrog@!cn"
-    "jquery@!cn"
-    "jsdelivr@!cn"
-    "line@!cn"
-    "mega@!cn"
-    "mozilla@!cn"
-    "netflix@!cn"
-    "openai@!cn"
-    "oracle@!cn"
-    "pixiv@!cn"
-    "qualcomm@!cn"
-    "reddit@!cn"
-    "slack@!cn"
-    "spotify@!cn"
-    "stripe@!cn"
-    "threads@!cn"
-    "tmdb@!cn"
-    "tumblr@!cn"
-    "twitch@!cn"
-    "twitter@!cn"
-    "vimeo@!cn"
-    "yandex@!cn"
-)
-
 rule_set_urls=(
     "rule/Surge/Cryptocurrency/Cryptocurrency.list"
-    "rule/Surge/UKMedia/UKMedia.list"
-    "rule/Surge/USMedia/USMedia.list"
+    "rule/Surge/Global/Global_All.list"
 
     "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list"
     "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Porn.list"
@@ -63,4 +11,11 @@ rule_set_urls=(
 
 domain_list_urls=(
     "https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt"
+
+    "rule/Surge/Global/Global_Domain.list"
+)
+
+geosite_filenames=(
+    "category-cryptocurrency@!cn"
+    "category-porn@!cn"
 )
