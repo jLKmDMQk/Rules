@@ -33,7 +33,7 @@ def main():
 
                 if category == "all":
                     pass
-                elif category == "@!cn":
+                elif category == "!cn":
                     if line.endswith(" @cn"):
                         continue
                 else:
@@ -51,6 +51,8 @@ def main():
                 site_list.append(site)
 
     print('\n'.join(site_list))
+    print(f"category: {category}")
+    print(f"filename: {args.filename}")
 
 
 if __name__ == "__main__":
