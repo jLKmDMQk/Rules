@@ -6,9 +6,11 @@ function sites_common_handle() {
     target_2_file="$2"
     target_3_file="$3"
 
-    for url in "${rule_set_urls[@]}"; do
-        handle_rule_set_to_domain_list "$url" "$domain_raw_file" "$domain_raw_list_file"
-    done
+    if [ ${#rule_set_urls[@]} -gt 0 ]; then
+        for url in "${rule_set_urls[@]}"; do
+            handle_rule_set_to_domain_list "$url" "$domain_raw_file" "$domain_raw_list_file"
+        done
+    fi
 
     if [ ${#domain_list_urls[@]} -gt 0 ]; then
         for url in "${domain_list_urls[@]}"; do
@@ -18,7 +20,7 @@ function sites_common_handle() {
 
     if [ ${#geosite_filenames[@]} -gt 0 ]; then
         for filename in "${geosite_filenames[@]}"; do
-            python3 ./Scripts/Utils/geosite.py "$filename" > "$domain_raw_file"
+            python3 ./Scripts/Utils/geosite.py "$filename" >"$domain_raw_file"
             handle_rule_set_to_domain_list "" "$domain_raw_file" "$domain_raw_list_file"
         done
     fi
