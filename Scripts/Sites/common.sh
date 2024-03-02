@@ -25,7 +25,7 @@ function sites_common_handle() {
 
     sort_and_deduplicate "$domain_raw_list_file" "$domain_list_file"
 
-    cp "$domain_list_file" $target_1_file
+    cp "$domain_list_file" "$target_1_file"
 
     handle_to_surge_domain_ruleset "$domain_list_file" "$target_2_file"
 

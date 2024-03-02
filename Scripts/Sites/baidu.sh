@@ -9,7 +9,8 @@ rule_set_urls=(
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Baidu/Baidu.list"
 )
 
-domain_list_urls=(
+geosite_filenames=(
+    "baidu"
 )
 
 sites_common_handle "./surge/baidu-domain.list" "./surge/baidu-ruleset.list" "./list/baidu-site.list"

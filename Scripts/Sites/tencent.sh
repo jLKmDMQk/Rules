@@ -10,7 +10,8 @@ rule_set_urls=(
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.list"
 )
 
-domain_list_urls=(
+geosite_filenames=(
+    "tencent"
 )
 
 sites_common_handle "./surge/tencent-domain.list" "./surge/tencent-ruleset.list" "./list/tencent-site.list"

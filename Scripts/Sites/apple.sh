@@ -26,7 +26,8 @@ rule_set_urls=(
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/iCloudPrivateRelay/iCloudPrivateRelay.list"
 )
 
-domain_list_urls=(
+geosite_filenames=(
+    "apple@all"
 )
 
 sites_common_handle "./surge/apple-domain.list" "./surge/apple-ruleset.list" "./list/apple.list"

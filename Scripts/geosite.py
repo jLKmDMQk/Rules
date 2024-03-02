@@ -17,7 +17,8 @@ def main():
     parser.add_argument("filename", help="the file to be download")
     args = parser.parse_args()
 
-    include_list.append(args.filename)
+    include_list.append(args.filename.split('@')[0])
+    no_fliter = args.filename.split('@')[-1] == "all"
 
     while len(include_list) > 0:
         filename = include_list.pop()
@@ -31,7 +32,7 @@ def main():
                 include_list.append(line.split(':')[-1].split(' ')[0])
             elif (not line.startswith('keyword:') and
                   not line.startswith('regexp:') and
-                  not line.endswith(' @!cn') and
+                  (no_fliter or not line.endswith(' @!cn')) and
                   not line.startswith('#') and
                   line.strip() != ''):
                 site = line.split(' ')[0]

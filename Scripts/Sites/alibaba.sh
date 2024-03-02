@@ -16,7 +16,8 @@ rule_set_urls=(
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XianYu/XianYu.list"
 )
 
-domain_list_urls=(
+geosite_filenames=(
+    "alibaba"
 )
 
 sites_common_handle "./surge/alibaba-domain.list" "./surge/alibaba-ruleset.list" "./list/ali-site.list"
