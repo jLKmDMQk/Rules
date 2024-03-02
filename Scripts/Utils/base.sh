@@ -14,12 +14,12 @@ function download_file() {
         rm -f "$file_path"
     fi
 
-    if [ -n "$url" ]; then
-      if [[ $url =~ ^https?:// ]]; then
+    if [[ $url =~ ^https?:// ]]; then
         wget -q -O "$file_path" "$url"
-      else
-        cat "./ios_rule_script/$url" > "$file_path"
-      fi
+    elif [[ $url == *"/"* ]]; then
+        cat "./ios_rule_script/$url" >"$file_path"
+    else
+        python3 ./Scripts/Utils/geosite.py "$url" >"$file_path"
     fi
 }
 
