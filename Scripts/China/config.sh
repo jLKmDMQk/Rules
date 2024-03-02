@@ -60,6 +60,7 @@ rule_set_urls=(
     "rule/Surge/Anjuke/Anjuke.list"
     "rule/Surge/CSDN/CSDN.list"
     "rule/Surge/Douyu/Douyu.list"
+    "rule/Surge/Geely/Geely.list"
     "rule/Surge/JueJin/JueJin.list"
     "rule/Surge/LanZouYun/LanZouYun.list"
     "rule/Surge/LeJu/LeJu.list"
