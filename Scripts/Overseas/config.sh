@@ -2,8 +2,6 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 geosite_filenames=(
-    "1337x@!cn"
-    "2kgames@!cn"
     "9news@!cn"
     "9to5@!cn"
     "akamai@!cn"
