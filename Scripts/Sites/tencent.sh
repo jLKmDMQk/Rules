@@ -4,6 +4,10 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 source ./Scripts/Utils/base.sh
 source ./Scripts/Utils/common.sh
 
+rule_set_urls=(
+    "rule/Surge/Tencent/Tencent.list"
+)
+
 geosite_filenames=(
     "tencent"
 )
