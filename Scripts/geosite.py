@@ -18,9 +18,6 @@ def main():
     include_list.append(args.filename.split('@')[0])
     category = args.filename.split('@')[-1]
 
-    print(f"filename: {args.filename}", flush=True)
-    print(f"category: {category}", flush=True)
-
     while len(include_list) > 0:
         filename = include_list.pop()
         with open(f"{BASE_FILE_PATH}/{filename}", "r") as f:

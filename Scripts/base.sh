@@ -14,7 +14,9 @@ function download_file() {
         rm -f "$file_path"
     fi
 
-    wget -q -O "$file_path" "$url"
+    if [ -n "$url" ]; then
+      wget -q -O "$file_path" "$url"
+    fi
 }
 
 function handle_rule_set_to_domain_list() {
@@ -22,9 +24,7 @@ function handle_rule_set_to_domain_list() {
     source_file_path="$2"
     target_file_path="$3"
 
-    if [ -n "$url" ]; then
-      download_file "$url" "$source_file_path"
-    fi
+    download_file "$url" "$source_file_path"
 
     cat $source_file_path | grep "DOMAIN-SUFFIX," | awk -F',' '{print "2\t."$2}' >>$target_file_path
     cat $source_file_path | grep "DOMAIN," | awk -F',' '{print "1\t"$2}' >>$target_file_path
