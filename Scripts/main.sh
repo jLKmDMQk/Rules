@@ -2,18 +2,20 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 scripts=(
-    "china-ip.sh"
-    "cmcc-ip.sh"
-    "SharePoint.py"
     "China/china.sh"
     "Overseas/overseas.sh"
+
     "Sites/360.sh"
-    "Sites/apple.sh"
     "Sites/alibaba.sh"
+    "Sites/apple.sh"
     "Sites/baidu.sh"
     "Sites/bytedance.sh"
+    "Sites/porn.sh"
     "Sites/tencent.sh"
-    "Other/porn.sh"
+
+    "Others/SharePoint.py"
+    "Others/china-ip.sh"
+    "Others/cmcc-ip.sh"
 )
 
 pip3 install -r ./Scripts/requirements.txt

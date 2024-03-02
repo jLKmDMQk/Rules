@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
-source ./Scripts/base.sh
+source ./Scripts/Utils/base.sh
 
 url="https://github.com/Loyalsoldier/surge-rules/raw/release/cncidr.txt"
 

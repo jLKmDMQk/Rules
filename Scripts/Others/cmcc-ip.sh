@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
-source ./Scripts/base.sh
+source ./Scripts/Utils/base.sh
 
 wget -q -O $domain_raw_file "https://ispip.clang.cn/cmcc_cidr.txt"
 cat $domain_raw_file >>$domain_raw_list_file

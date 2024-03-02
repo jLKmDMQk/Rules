@@ -48,6 +48,7 @@ def main():
                         site = site.replace('full:', 'DOMAIN,')
                 else:
                     site = f'DOMAIN-SUFFIX,{site}'
+
                 site_list.append(site)
 
     print('\n'.join(site_list))
