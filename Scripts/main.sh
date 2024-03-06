@@ -6,13 +6,14 @@ scripts=(
     "Overseas/overseas.sh"
 
     "Sites/360.sh"
+    "Sites/ai.sh"
     "Sites/alibaba.sh"
     "Sites/apple.sh"
     "Sites/baidu.sh"
     "Sites/bytedance.sh"
+    "Sites/cryptocurrency.sh"
     "Sites/porn.sh"
     "Sites/tencent.sh"
-    "Sites/cryptocurrency.sh"
 
     "Others/SharePoint.py"
     "Others/china-ip.sh"
