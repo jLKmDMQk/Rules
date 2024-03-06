@@ -24,9 +24,11 @@ geosite_filenames=(
     "category-scholar-!cn@!cn"
     "category-social-media-!cn@!cn"
 
+    "cloudflare@!cn"
     "docker@!cn"
     "gitbook@!cn"
-    "github@!cn"
+    "github@!cn"z
     "gitlab@!cn"
+    "google@!cn"
     "stackexchange@!cn"
 )
