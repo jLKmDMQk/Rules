@@ -51,7 +51,7 @@ function sort_and_deduplicate() {
     source_file_path="$1"
     target_file_path="$2"
 
-    cat $source_file_path | grep -v "apple.com$" | grep -v ".cn$" | sort | cut -f2- | uniq | sed '/^\s*$/d' | sed '/^$/d' >$target_file_path
+    cat $source_file_path | sort | cut -f2- | uniq | sed '/^\s*$/d' | sed '/^$/d' >$target_file_path
 }
 
 function handle_to_surge_domain_ruleset() {
