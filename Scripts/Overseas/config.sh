@@ -14,6 +14,8 @@ domain_list_urls=(
 
 geosite_filenames=(
     "category-browser-!cn@!cn"
+    "category-cas@!cn"
+    "category-companies@!cn"
     "category-cryptocurrency@!cn"
     "category-dev@!cn"
     "category-entertainment@!cn"
@@ -21,7 +23,4 @@ geosite_filenames=(
     "category-porn@!cn"
     "category-scholar-!cn@!cn"
     "category-social-media-!cn@!cn"
-
-    "google@!cn"
-    "twitch@!cn"
 )
