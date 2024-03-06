@@ -16,14 +16,16 @@ geosite_filenames=(
     "category-browser-!cn@!cn"
     "category-cas@!cn"
     "category-cryptocurrency@!cn"
+    "category-ecommerce-@!cn"
     "category-entertainment@!cn"
     "category-media@!cn"
     "category-porn@!cn"
     "category-scholar-!cn@!cn"
     "category-social-media-!cn@!cn"
 
+    "docker@!cn"
     "gitbook@!cn"
     "github@!cn"
     "gitlab@!cn"
-    "docker@!cn"
+    "stackexchange@!cn"
 )
