@@ -18,6 +18,7 @@ geosite_filenames=(
     "category-cryptocurrency@!cn"
     "category-ecommerce-@!cn"
     "category-entertainment@!cn"
+    "category-ipfs@!cn"
     "category-media@!cn"
     "category-porn@!cn"
     "category-scholar-!cn@!cn"
