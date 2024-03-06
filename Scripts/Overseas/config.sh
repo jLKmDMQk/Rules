@@ -15,12 +15,15 @@ domain_list_urls=(
 geosite_filenames=(
     "category-browser-!cn@!cn"
     "category-cas@!cn"
-    "category-companies@!cn"
     "category-cryptocurrency@!cn"
-    "category-dev@!cn"
     "category-entertainment@!cn"
     "category-media@!cn"
     "category-porn@!cn"
     "category-scholar-!cn@!cn"
     "category-social-media-!cn@!cn"
+
+    "gitbook@!cn"
+    "github@!cn"
+    "gitlab@!cn"
+    "docker@!cn"
 )
