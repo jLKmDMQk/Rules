@@ -13,6 +13,7 @@ scripts=(
     "Sites/bytedance.sh"
     "Sites/cryptocurrency.sh"
     "Sites/porn.sh"
+    "Sites/speedtest.sh"
     "Sites/tencent.sh"
 
     "Others/SharePoint.py"
