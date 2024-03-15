@@ -10,17 +10,15 @@ if __name__ == "__main__":
 
     ips = []
     data = json.loads(github_api_r.content)
-    for item in data:
-        try:
-            for ip in data.get(item):
-                try:
-                    ipaddress.ip_network(ip)
-                    if type(ipaddress.ip_network(ip)) == ipaddress.IPv4Network:
-                        ips.append(ip)
-                except ValueError:
-                    pass
-        except TypeError:
-            pass
+    fields = ["web", "api", "git", "hooks"]
+    for field in fields:
+        for ip in data.get(field):
+            try:
+                ipaddress.ip_network(ip)
+                if type(ipaddress.ip_network(ip)) == ipaddress.IPv4Network:
+                    ips.append(ip)
+            except ValueError:
+                pass
 
     sorted_ips = sorted(set(ips), key=ipaddress.ip_network)
     sorted_ips = [str(ip) for ip in sorted_ips]
