@@ -16,6 +16,7 @@ scripts=(
     "Sites/speedtest.sh"
     "Sites/tencent.sh"
 
+    "Others/Github.py"
     "Others/SharePoint.py"
     "Others/china-ip.sh"
     "Others/cloudflare-ip.sh"
