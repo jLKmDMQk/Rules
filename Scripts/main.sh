@@ -18,6 +18,7 @@ scripts=(
 
     "Others/SharePoint.py"
     "Others/china-ip.sh"
+    "Others/cloudflare-ip.sh"
     "Others/cmcc-ip.sh"
 )
 
