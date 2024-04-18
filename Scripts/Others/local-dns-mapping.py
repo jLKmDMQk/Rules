@@ -54,8 +54,8 @@ if __name__ == "__main__":
         },
     ]
 
-    # file_path = "./surge/local-dns-mapping.sgmodule"
-    file_path = "./local-dns-mapping.sgmodule"
+    file_path = "./surge/local-dns-mapping.sgmodule"
+    # file_path = "./local-dns-mapping.sgmodule"
 
     with open(file_path, "w") as file:
         file.write(
