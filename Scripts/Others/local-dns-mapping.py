@@ -20,7 +20,7 @@ if __name__ == "__main__":
         {
             "name": "alibaba",
             "file_path": "./list/ali-site.list",
-            "dns": ["quic://dns.alidns.com"],
+            "dns": ["quic://dns.alidns.com", "h3://dns.alidns.com"],
         },
         {
             "name": "baidu",
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         {
             "name": "bilibili",
             "file_path": "./list/bilibili-site.list",
-            "dns": ["https://doh.pub/dns-query", "tls://dot.pub"],
+            "dns": ["https://doh.pub/dns-query"],
         },
         {
             "name": "bytedance",
@@ -40,12 +40,12 @@ if __name__ == "__main__":
         {
             "name": "360",
             "file_path": "./list/qihoo-site.list",
-            "dns": ["https://doh.360.cn/dns-query", "tls://dot.360.cn"],
+            "dns": ["https://doh.360.cn/dns-query"],
         },
         {
             "name": "tencent",
             "file_path": "./list/tencent-site.list",
-            "dns": ["https://doh.pub/dns-query", "tls://dot.pub"],
+            "dns": ["https://doh.pub/dns-query"],
         },
         {
             "name": "Local & Router",
