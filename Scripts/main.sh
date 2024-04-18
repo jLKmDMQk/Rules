@@ -10,6 +10,7 @@ scripts=(
     "Sites/alibaba.sh"
     "Sites/apple.sh"
     "Sites/baidu.sh"
+    "Sites/bilibili.sh"
     "Sites/bytedance.sh"
     "Sites/cryptocurrency.sh"
     "Sites/porn.sh"
@@ -21,6 +22,7 @@ scripts=(
     "Others/china-ip.sh"
     "Others/cloudflare-ip.sh"
     "Others/cmcc-ip.sh"
+    "Others/local-dns-mapping.py"
 )
 
 pip3 install -r ./Scripts/requirements.txt
