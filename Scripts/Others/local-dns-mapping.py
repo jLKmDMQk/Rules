@@ -20,7 +20,7 @@ if __name__ == "__main__":
         {
             "name": "alibaba",
             "file_path": "./list/ali-site.list",
-            "dns": ["quic://dns.alidns.com"],
+            "dns": ["h3://dns.alidns.com/dns-query"],
         },
         {
             "name": "baidu",

@@ -1,7 +1,6 @@
 # > Encrypted DNS
 dns.alidns.com = 223.5.5.5,223.6.6.6
 doh.pub = 1.12.12.12,120.53.53.53
-dot.pub = 1.12.12.12,120.53.53.53
 doh.360.cn = server:101.226.4.6
 dot.360.cn = server:218.30.118.6
 
