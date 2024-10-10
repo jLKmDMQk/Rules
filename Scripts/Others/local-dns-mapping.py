@@ -38,11 +38,6 @@ if __name__ == "__main__":
             "dns": ["180.184.1.1", "180.184.2.2"],
         },
         {
-            "name": "360",
-            "file_path": "./list/qihoo-site.list",
-            "dns": ["https://doh.360.cn/dns-query"],
-        },
-        {
             "name": "tencent",
             "file_path": "./list/tencent-site.list",
             "dns": ["https://doh.pub/dns-query"],
