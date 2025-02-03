@@ -3,11 +3,11 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 
 source ./Scripts/Utils/base.sh
 
-wget -q -O "$domain_raw_file" "https://ispip.clang.cn/cmcc_cidr.txt"
+wget -q -O "$domain_raw_file" "https://ispip.clang.cn/cmcc.txt"
 cat "$domain_raw_file" >>"$domain_raw_list_file"
 echo "" >>"$domain_raw_list_file"
 
-wget -q -O "$domain_raw_file" "https://ispip.clang.cn/crtc_cidr.txt"
+wget -q -O "$domain_raw_file" "https://ispip.clang.cn/crtc.txt"
 cat "$domain_raw_file" >>"$domain_raw_list_file"
 echo "" >>"$domain_raw_list_file"
 
