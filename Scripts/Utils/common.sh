@@ -5,6 +5,7 @@ function sites_common_handle() {
     target_1_file="$1"
     target_2_file="$2"
     target_3_file="$3"
+    target_4_file="$4"
 
     if [ ${#rule_set_urls[@]} -gt 0 ]; then
         for url in "${rule_set_urls[@]}"; do
@@ -28,7 +29,18 @@ function sites_common_handle() {
 
     cp "$domain_list_file" "$target_1_file"
 
-    handle_to_surge_domain_ruleset "$domain_list_file" "$target_2_file"
+    # 处理 Surge 规则集
+    if [ -n "$target_2_file" ]; then
+        handle_to_surge_domain_ruleset "$domain_list_file" "$target_2_file"
+    fi
 
-    handle_to_common_domain_list "$domain_list_file" "$target_3_file"
+    # 处理通用域名列表
+    if [ -n "$target_3_file" ]; then
+        handle_to_common_domain_list "$domain_list_file" "$target_3_file"
+    fi
+
+    # 处理 Sing-box 规则集
+    if [ -n "$target_4_file" ]; then
+        handle_to_sing_box_rule_set "$domain_list_file" "$target_4_file"
+    fi
 }

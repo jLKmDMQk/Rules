@@ -89,3 +89,42 @@ function handle_clash_domain_rule_providers() {
 
     grep "\-\ " $source_file_path | sed 's/"//g' | sed "s/'//g" | sed 's/- +//' | sed 's/- //' >>$target_file_path
 }
+
+function handle_to_sing_box_rule_set() {
+    source_file_path="$1"
+    target_file_path="$2"
+
+    # 创建临时文件存储处理后的域名
+    domain_file=$(mktemp)
+    domain_suffix_file=$(mktemp)
+
+    # 提取域名和域名后缀
+    cat "$source_file_path" | grep -ve "^\." | grep -v "#" >"$domain_file"
+    cat "$source_file_path" | grep -e "^\." | sed 's/^\.//' >"$domain_suffix_file"
+
+    # 生成JSON格式
+    echo '{' >"$target_file_path"
+    echo '  "version": 1,' >>"$target_file_path"
+    echo '  "rules": {' >>"$target_file_path"
+
+    # 只有domain文件有内容时才输出domain字段
+    if [ -s "$domain_file" ]; then
+        echo '    "domain": [' >>"$target_file_path"
+        sed 's/^/      "/;s/$/",/' "$domain_file" | sed '$s/,$//' >>"$target_file_path"
+        echo '    ],' >>"$target_file_path"
+    fi
+
+    echo '    "domain_suffix": [' >>"$target_file_path"
+
+    # 添加domain_suffix数组
+    if [ -s "$domain_suffix_file" ]; then
+        sed 's/^/      "/;s/$/",/' "$domain_suffix_file" | sed '$s/,$//' >>"$target_file_path"
+    fi
+
+    echo '    ]' >>"$target_file_path"
+    echo '  }' >>"$target_file_path"
+    echo '}' >>"$target_file_path"
+
+    # 清理临时文件
+    rm -f "$domain_file" "$domain_suffix_file"
+}
