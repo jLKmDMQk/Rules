@@ -3,6 +3,7 @@ export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~
 
 rule_set_urls=(
     "rule/Surge/BardAI/BardAI.list"
+    "rule/Surge/Claude/Claude.list"
     "rule/Surge/Copilot/Copilot.list"
     "rule/Surge/Cryptocurrency/Cryptocurrency.list"
     "rule/Surge/Gemini/Gemini.list"
@@ -17,6 +18,7 @@ domain_list_urls=(
 )
 
 geosite_filenames=(
+    "category-ai-!cn"
     "category-browser-!cn@!cn"
     "category-cas@!cn"
     "category-cryptocurrency@!cn"
@@ -31,7 +33,7 @@ geosite_filenames=(
     "cloudflare@!cn"
     "docker@!cn"
     "gitbook@!cn"
-    "github@!cn"z
+    "github@!cn"
     "gitlab@!cn"
     "google@!cn"
     "jetbrains-ai@!cn"

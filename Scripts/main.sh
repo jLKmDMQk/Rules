@@ -2,7 +2,9 @@
 export PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 scripts=(
+    "AI-\!CN/ai-\!cn.sh"
     "China/china.sh"
+    "ChinaMax/china-max.sh"
     "Overseas/overseas.sh"
 
     "Sites/360.sh"
