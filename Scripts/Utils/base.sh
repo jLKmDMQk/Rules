@@ -105,24 +105,27 @@ function handle_to_sing_box_rule_set() {
     # 生成JSON格式
     echo '{' >"$target_file_path"
     echo '  "version": 1,' >>"$target_file_path"
-    echo '  "rules": {' >>"$target_file_path"
+    echo '  "rules": [' >>"$target_file_path"
 
-    # 只有domain文件有内容时才输出domain字段
+    # Domain 规则
+    echo '    {' >>"$target_file_path"
+    echo '      "domain": [' >>"$target_file_path"
     if [ -s "$domain_file" ]; then
-        echo '    "domain": [' >>"$target_file_path"
-        sed 's/^/      "/;s/$/",/' "$domain_file" | sed '$s/,$//' >>"$target_file_path"
-        echo '    ],' >>"$target_file_path"
+        sed 's/^/        "/;s/$/",/' "$domain_file" | sed '$s/,$//' >>"$target_file_path"
     fi
+    echo '      ]' >>"$target_file_path"
+    echo '    },' >>"$target_file_path"
 
-    echo '    "domain_suffix": [' >>"$target_file_path"
-
-    # 添加domain_suffix数组
+    # Domain Suffix 规则
+    echo '    {' >>"$target_file_path"
+    echo '      "domain_suffix": [' >>"$target_file_path"
     if [ -s "$domain_suffix_file" ]; then
-        sed 's/^/      "/;s/$/",/' "$domain_suffix_file" | sed '$s/,$//' >>"$target_file_path"
+        sed 's/^/        "/;s/$/",/' "$domain_suffix_file" | sed '$s/,$//' >>"$target_file_path"
     fi
+    echo '      ]' >>"$target_file_path"
+    echo '    }' >>"$target_file_path"
 
-    echo '    ]' >>"$target_file_path"
-    echo '  }' >>"$target_file_path"
+    echo '  ]' >>"$target_file_path"
     echo '}' >>"$target_file_path"
 
     # 清理临时文件

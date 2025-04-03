@@ -18,14 +18,16 @@ cat "$domain_raw_list_file" | awk '{print "whitelist-ip "$0}' >./smartdns/whitel
 # Generate JSON format
 echo '{
   "version": 1,
-  "rules": {
-    "ip_cidr": [' > ./sing-box/china-ip.json
-cat "$domain_raw_list_file" | awk '{print "      \""$0"\","}' | sed '$ s/,$//' >> ./sing-box/china-ip.json
-echo '    ]
-  }
-}' >> ./sing-box/china-ip.json
+  "rules": [
+    {
+      "ip_cidr": [' >./sing-box/china-ip.json
+cat "$domain_raw_list_file" | awk '{print "        \""$0"\","}' | sed '$ s/,$//' >>./sing-box/china-ip.json
+echo '      ]
+    }
+  ]
+}' >>./sing-box/china-ip.json
 
 # Generate RouterOS RSC
 echo "/ip firewall address-list remove [/ip firewall address-list find list=china-ip-list]" >./routeros/china-ip-list.rsc
-echo "/ip firewall address-list" >> ./routeros/china-ip-list.rsc
-cat "$domain_raw_list_file" | awk '{print "add address="$0" disabled=no list=china-ip-list"}' >> ./routeros/china-ip-list.rsc
+echo "/ip firewall address-list" >>./routeros/china-ip-list.rsc
+cat "$domain_raw_list_file" | awk '{print "add address="$0" disabled=no list=china-ip-list"}' >>./routeros/china-ip-list.rsc
