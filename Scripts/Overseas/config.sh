@@ -18,7 +18,7 @@ domain_list_urls=(
 )
 
 geosite_filenames=(
-    "category-ai-!cn"
+    "category-ai-!cn@!cn"
     "category-browser-!cn@!cn"
     "category-cas@!cn"
     "category-cryptocurrency@!cn"
