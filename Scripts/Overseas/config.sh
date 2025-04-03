@@ -11,6 +11,7 @@ rule_set_urls=(
 
     "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Porn.list"
     "https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Porn.list"
+    "https://ruleset.skk.moe/List/non_ip/ai.conf"
 )
 
 domain_list_urls=(

@@ -6,14 +6,18 @@ source ./Scripts/Utils/common.sh
 
 rule_set_urls=(
     "rule/Surge/BardAI/BardAI.list"
+    "rule/Surge/Claude/Claude.list"
     "rule/Surge/Copilot/Copilot.list"
     "rule/Surge/Gemini/Gemini.list"
     "rule/Surge/OpenAI/OpenAI.list"
+
+    "https://ruleset.skk.moe/List/non_ip/ai.conf"
 )
 
 geosite_filenames=(
-    "openai"
+    "category-ai-!cn"
+
     "jetbrains-ai@!cn"
 )
 
-sites_common_handle "./surge/ai-domain.list" "./surge/ai-ruleset.list" "./list/ai-site.list"
+sites_common_handle "./surge/ai-domain.list" "./surge/ai-ruleset.list" "./list/ai-site.list" "./sing-box/ai-site.json"
