@@ -5,6 +5,8 @@ source ./Scripts/Utils/base.sh
 source ./Scripts/Utils/common.sh
 
 rule_set_urls=(
+    "https://ruleset.skk.moe/List/non_ip/ai.conf"
+
     "rule/Surge/BardAI/BardAI.list"
     "rule/Surge/Gemini/Gemini.list"
 
