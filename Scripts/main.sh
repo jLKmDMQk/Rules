@@ -38,3 +38,5 @@ for script in "${scripts[@]}"; do
     chmod +x "$script_file"
     $script_file
 done
+
+# test
