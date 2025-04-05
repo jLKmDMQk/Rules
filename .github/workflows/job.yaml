@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "列出 ./result 目录下的所有目录:"
           ls -la ./result/
-          
+
           echo "1. 当前目录 ${PWD}"
           git config --global init.defaultBranch master
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
