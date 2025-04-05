@@ -39,6 +39,7 @@ jobs:
           for branch in "${BRANCHS[@]}"; do
               cd ./result/${branch} || exit 1
               git init
+              git config --global init.defaultBranch master
               git config --local user.name "github-actions[bot]"
               git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
               git checkout -b ${branch}
