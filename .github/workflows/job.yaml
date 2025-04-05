@@ -19,10 +19,13 @@ jobs:
       - name: Create directory
         working-directory: ${{ github.workspace }}
         run: |
+          echo "开始创建目录..."
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
+            echo "创建目录: ./result/${branch}"
             mkdir -p ./result/${branch}
           done
+          echo "所有目录创建完成"
 
       - name: Handle Data
         working-directory: ${{ github.workspace }}
