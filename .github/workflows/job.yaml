@@ -34,11 +34,14 @@ jobs:
           ./Scripts/main.sh
 
       - name: Git push assets to branchs
+        working-directory: ${{ github.workspace }}
         run: |
+          echo "1. 当前目录 ${PWD}"
           git config --global init.defaultBranch master
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
               cd ./result/${branch} || exit 1
+              echo "2. 当前目录 ${PWD}"
               git init
               git config --local user.name "github-actions[bot]"
               git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -48,6 +51,7 @@ jobs:
               git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
               git push -f -u origin ${branch}
               cd ..
+              echo "3. 当前目录 ${PWD}"
           done
 
       - name: Purge jsdelivr CDN
