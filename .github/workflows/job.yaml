@@ -36,18 +36,11 @@ jobs:
       - name: Git push assets to branchs
         working-directory: ${{ github.workspace }}
         run: |
-          echo "列出 ./result 目录下的所有目录:"
-          ls -la ./result/
-
-          echo "1. 当前目录 ${PWD}"
+          cd ./result
           git config --global init.defaultBranch master
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
-              echo "2. 当前目录 ${PWD}"
-              echo "列出当前目录下的所有目录:"
-              ls -la
-              cd ./result/${branch} || exit 1
-              echo "3. 当前目录 ${PWD}"
+              cd ./${branch} || exit 1
               git init
               git config --local user.name "github-actions[bot]"
               git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -57,14 +50,15 @@ jobs:
               git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
               git push -f -u origin ${branch}
               cd ..
-              echo "4. 当前目录 ${PWD}"
           done
 
       - name: Purge jsdelivr CDN
+        working-directory: ${{ github.workspace }}
         run: |
+          cd ./result
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
-              cd ./result/${branch} || exit 1
+              cd ./${branch} || exit 1
               for file in $(ls); do
                 curl -sSL "https://purge.jsdelivr.net/gh/${{ github.repository }}@${branch}/${file}"
               done
