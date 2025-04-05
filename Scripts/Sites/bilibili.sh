@@ -11,4 +11,4 @@ geosite_filenames=(
     "bilibili"
 )
 
-sites_common_handle "./surge/bilibili-domain.list" "./surge/bilibili-ruleset.list" "./list/bilibili-site.list"
+sites_common_handle "./result/surge/bilibili-domain.list" "./result/surge/bilibili-ruleset.list" "./result/list/bilibili-site.list"

@@ -12,4 +12,4 @@ geosite_filenames=(
     "baidu"
 )
 
-sites_common_handle "./surge/baidu-domain.list" "./surge/baidu-ruleset.list" "./list/baidu-site.list"
+sites_common_handle "./result/surge/baidu-domain.list" "./result/surge/baidu-ruleset.list" "./result/list/baidu-site.list"

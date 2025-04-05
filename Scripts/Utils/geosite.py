@@ -4,7 +4,7 @@ from typing import List
 
 import argparse
 
-BASE_FILE_PATH = "./domain-list-community/data"
+BASE_FILE_PATH = "./dependence/domain-list-community/data"
 
 site_list: List[str] = []
 include_list: List[str] = []

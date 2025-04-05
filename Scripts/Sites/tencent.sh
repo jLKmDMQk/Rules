@@ -12,4 +12,4 @@ geosite_filenames=(
     "tencent"
 )
 
-sites_common_handle "./surge/tencent-domain.list" "./surge/tencent-ruleset.list" "./list/tencent-site.list"
+sites_common_handle "./result/surge/tencent-domain.list" "./result/surge/tencent-ruleset.list" "./result/list/tencent-site.list"

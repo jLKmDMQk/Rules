@@ -5,4 +5,4 @@ source ./Scripts/Utils/base.sh
 source ./Scripts/Utils/common.sh
 source ./Scripts/Overseas/config.sh
 
-sites_common_handle "./surge/overseas-site-domain.list" "./surge/overseas-site-ruleset.list" "./list/overseas-site.list" "./sing-box/overseas-site.json"
+sites_common_handle "./result/surge/overseas-site-domain.list" "./result/surge/overseas-site-ruleset.list" "./result/list/overseas-site.list" "./result/sing-box/overseas-site.json"

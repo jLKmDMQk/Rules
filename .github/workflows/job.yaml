@@ -21,7 +21,7 @@ jobs:
         run: |
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
-            mkdir ${branch}
+            mkdir -p ./result/${branch}
           done
 
       - name: Handle Data
@@ -34,7 +34,7 @@ jobs:
         run: |
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
-              cd ${branch} || exit 1
+              cd ./result/${branch} || exit 1
               git init
               git config --local user.name "github-actions[bot]"
               git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -50,7 +50,7 @@ jobs:
         run: |
           IFS=',' read -ra BRANCHS <<< "${{ env.ENV_BRANCHS }}"
           for branch in "${BRANCHS[@]}"; do
-              cd ${branch} || exit 1
+              cd ./result/${branch} || exit 1
               for file in $(ls); do
                 curl -sSL "https://purge.jsdelivr.net/gh/${{ github.repository }}@${branch}/${file}"
               done

@@ -12,4 +12,4 @@ geosite_filenames=(
     "speedtest"
 )
 
-sites_common_handle "./surge/speedtest-domain.list" "./surge/speedtest-ruleset.list" "./list/speedtest-site.list"
+sites_common_handle "./result/surge/speedtest-domain.list" "./result/surge/speedtest-ruleset.list" "./result/list/speedtest-site.list"

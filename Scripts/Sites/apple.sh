@@ -12,4 +12,4 @@ geosite_filenames=(
     "apple"
 )
 
-sites_common_handle "./surge/apple-domain.list" "./surge/apple-ruleset.list" "./list/apple.list"
+sites_common_handle "./result/surge/apple-domain.list" "./result/surge/apple-ruleset.list" "./result/list/apple.list"

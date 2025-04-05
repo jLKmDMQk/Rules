@@ -12,4 +12,4 @@ geosite_filenames=(
     "bytedance"
 )
 
-sites_common_handle "./surge/bytedance-domain.list" "./surge/bytedance-ruleset.list" "./list/bytedance-site.list"
+sites_common_handle "./result/surge/bytedance-domain.list" "./result/surge/bytedance-ruleset.list" "./result/list/bytedance-site.list"

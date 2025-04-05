@@ -17,7 +17,7 @@ function download_file() {
     if [[ $url =~ ^https?:// ]]; then
         wget -q -O "$file_path" "$url"
     elif [[ $url == *"/"* ]]; then
-        cat "./ios_rule_script/$url" >"$file_path"
+        cat "./dependence/ios_rule_script/$url" >"$file_path"
     else
         python3 ./Scripts/Utils/geosite.py "$url" >"$file_path"
     fi

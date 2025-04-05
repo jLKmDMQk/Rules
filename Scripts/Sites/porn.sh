@@ -13,4 +13,4 @@ geosite_filenames=(
     "category-porn"
 )
 
-sites_common_handle "./surge/porn-site-domain.list" "./surge/porn-site-ruleset.list" "./list/porn-site.list"
+sites_common_handle "./result/surge/porn-site-domain.list" "./result/surge/porn-site-ruleset.list" "./result/list/porn-site.list"

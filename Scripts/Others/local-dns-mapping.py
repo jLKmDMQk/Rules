@@ -19,27 +19,27 @@ if __name__ == "__main__":
     sources = [
         {
             "name": "alibaba",
-            "file_path": "./list/ali-site.list",
+            "file_path": "./result/list/ali-site.list",
             "dns": ["h3://dns.alidns.com/dns-query"],
         },
         {
             "name": "baidu",
-            "file_path": "./list/baidu-site.list",
+            "file_path": "./result/list/baidu-site.list",
             "dns": ["180.76.76.76"],
         },
         {
             "name": "bilibili",
-            "file_path": "./list/bilibili-site.list",
+            "file_path": "./result/list/bilibili-site.list",
             "dns": ["https://doh.pub/dns-query"],
         },
         {
             "name": "bytedance",
-            "file_path": "./list/bytedance-site.list",
+            "file_path": "./result/list/bytedance-site.list",
             "dns": ["180.184.1.1", "180.184.2.2"],
         },
         {
             "name": "tencent",
-            "file_path": "./list/tencent-site.list",
+            "file_path": "./result/list/tencent-site.list",
             "dns": ["https://doh.pub/dns-query"],
         },
         {
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         },
     ]
 
-    file_path = "./surge/local-dns-mapping.sgmodule"
+    file_path = "./result/surge/local-dns-mapping.sgmodule"
     # file_path = "./local-dns-mapping.sgmodule"
 
     with open(file_path, "w") as file:

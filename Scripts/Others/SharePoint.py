@@ -38,16 +38,16 @@ if __name__ == "__main__":
     sorted_ipv6s = sorted(set(ipv6s), key=ipaddress.ip_network)
     sorted_ipv6s = [str(ip) for ip in sorted_ipv6s]
     result_ips = sorted_ips + sorted_ipv6s
-    open("./routeros/sharepoint-ip-list.rsc", "w").write(
+    open("./result/routeros/sharepoint-ip-list.rsc", "w").write(
         "/ip firewall address-list remove [/ip firewall address-list find list=sharepoint-ip-list]\n"
         + "/ip firewall address-list\n"
     )
     for ip in result_ips:
-        open("./routeros/sharepoint-ip-list.rsc", "a").write(
+        open("./result/routeros/sharepoint-ip-list.rsc", "a").write(
             f'add address="{ip}" disabled=no list=sharepoint-ip-list\n'
         )
 
-    open("./list/sharepoint-domain.list", "w")
+    open("./result/list/sharepoint-domain.list", "w")
     for domain in domains:
         domain = domain.replace("*.", "")
-        open("./list/sharepoint-domain.list", "a").write(f"{domain}\n")
+        open("./result/list/sharepoint-domain.list", "a").write(f"{domain}\n")

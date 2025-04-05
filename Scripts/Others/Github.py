@@ -24,11 +24,11 @@ if __name__ == "__main__":
     sorted_ips = [str(ip) for ip in sorted_ips]
     result_ips = sorted_ips
 
-    open("./routeros/github-ip-list.rsc", "w").write(
+    open("./result/routeros/github-ip-list.rsc", "w").write(
         "/ip firewall address-list remove [/ip firewall address-list find list=github-ip-list]\n"
         + "/ip firewall address-list\n"
     )
     for ip in result_ips:
-        open("./routeros/github-ip-list.rsc", "a").write(
+        open("./result/routeros/github-ip-list.rsc", "a").write(
             f'add address="{ip}" disabled=no list=github-ip-list\n'
         )

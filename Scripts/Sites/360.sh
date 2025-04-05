@@ -12,4 +12,4 @@ geosite_filenames=(
     "qihoo360"
 )
 
-sites_common_handle "./surge/qihoo-domain.list" "./surge/qihoo-ruleset.list" "./list/qihoo-site.list"
+sites_common_handle "./result/surge/qihoo-domain.list" "./result/surge/qihoo-ruleset.list" "./result/list/qihoo-site.list"

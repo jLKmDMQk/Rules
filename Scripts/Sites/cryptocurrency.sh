@@ -12,4 +12,4 @@ geosite_filenames=(
     "category-cryptocurrency"
 )
 
-sites_common_handle "./surge/cryptocurrency-domain.list" "./surge/cryptocurrency-ruleset.list" "./list/cryptocurrency-site.list"
+sites_common_handle "./result/surge/cryptocurrency-domain.list" "./result/surge/cryptocurrency-ruleset.list" "./result/list/cryptocurrency-site.list"
