@@ -20,4 +20,4 @@ geosite_filenames=(
     "jetbrains-ai@!cn"
 )
 
-sites_common_handle "./result/surge/ai-domain.list" "./result/surge/ai-ruleset.list" "./result/list/ai-site.list" "./result/sing-box/ai-site.json"
+sites_common_handle "./result/surge/ai-domain.list" "./result/surge/ai-ruleset.list" "./result/list/ai-site.list" "./result/sing-box/ai-site.json" "./result/clash/ai-site.yaml"

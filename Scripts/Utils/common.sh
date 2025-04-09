@@ -6,6 +6,7 @@ function sites_common_handle() {
     target_2_file="$2"
     target_3_file="$3"
     target_4_file="$4"
+    target_5_file="$5"
 
     if [ ${#rule_set_urls[@]} -gt 0 ]; then
         for url in "${rule_set_urls[@]}"; do
@@ -41,5 +42,9 @@ function sites_common_handle() {
 
     if [ -n "$target_4_file" ]; then
         handle_to_sing_box_rule_set "$domain_list_file" "$target_4_file"
+    fi
+
+    if [ -n "$target_5_file" ]; then
+        handle_to_clash_domain_rule_providers "$domain_list_file" "$target_5_file"
     fi
 }
