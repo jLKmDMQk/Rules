@@ -27,19 +27,18 @@ function sites_common_handle() {
 
     sort_and_deduplicate "$domain_raw_list_file" "$domain_list_file"
 
-    cp "$domain_list_file" "$target_1_file"
+    if [ -n "$target_1_file" ]; then
+        cp "$domain_list_file" "$target_1_file"
+    fi
 
-    # 处理 Surge 规则集
     if [ -n "$target_2_file" ]; then
         handle_to_surge_domain_ruleset "$domain_list_file" "$target_2_file"
     fi
 
-    # 处理通用域名列表
     if [ -n "$target_3_file" ]; then
         handle_to_common_domain_list "$domain_list_file" "$target_3_file"
     fi
 
-    # 处理 Sing-box 规则集
     if [ -n "$target_4_file" ]; then
         handle_to_sing_box_rule_set "$domain_list_file" "$target_4_file"
     fi
