@@ -12,4 +12,4 @@ geosite_filenames=(
     "alibaba"
 )
 
-sites_common_handle "./result/surge/alibaba-domain.list" "./result/surge/alibaba-ruleset.list" "./result/list/ali-site.list"
+sites_common_handle "./result/surge/alibaba-domain.list" "./result/surge/alibaba-ruleset.list" "./result/list/ali-site.list" "" "./result/clash/alibaba-domain.yaml"
