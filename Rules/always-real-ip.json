@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_regex": [
+        "^DC\\._msDCS\\..*\\..*$",
+        "^GC\\._msDCS\\..*\\..*$",
+        "^PDC\\._msDCS\\..*\\..*$",
+        "^localhost\\..+\\.qq\\.com$",
+        "^localhost\\..+\\.weixin\\.qq\\.com$",
+        "^xbox\\..+\\.microsoft\\.com$",
+        "^(ntp|time)([0-9a-zA-Z])?\\..+\\.(com|cn|edu\\.cn|gov)$",
+        "^stun\\..+$"
+      ]
+    }
+  ]
+}

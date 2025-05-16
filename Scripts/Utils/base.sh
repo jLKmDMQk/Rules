@@ -131,3 +131,14 @@ function handle_to_sing_box_rule_set() {
     # 清理临时文件
     rm -f "$domain_file" "$domain_suffix_file"
 }
+
+function handle_to_clash_domain_rule_providers() {
+    source_file_path="$1"
+    target_file_path="$2"
+
+    # 写入文件头
+    echo 'payload:' >"$target_file_path"
+
+    # 原样添加域名列表，每行前添加"  - "
+    sed 's/^/  - "/;s/$/"/' "$source_file_path" >>"$target_file_path"
+}

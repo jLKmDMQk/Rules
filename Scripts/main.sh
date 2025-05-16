@@ -5,10 +5,11 @@ scripts=(
     "China/china.sh"
     "China/china-max.sh"
     "Overseas/overseas.sh"
-    \
+
     "Sites/360.sh"
     "Sites/ai.sh"
     "Sites/alibaba.sh"
+    "Sites/always-real-ip.sh"
     "Sites/apple.sh"
     "Sites/baidu.sh"
     "Sites/bilibili.sh"
@@ -17,7 +18,7 @@ scripts=(
     "Sites/porn.sh"
     "Sites/speedtest.sh"
     "Sites/tencent.sh"
-    \
+
     "Others/Github.py"
     "Others/SharePoint.py"
     "Others/china-ip.sh"

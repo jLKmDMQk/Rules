@@ -6,7 +6,7 @@ on:
 
 env:
   TZ: Asia/Shanghai
-  ENV_BRANCHS: "list,smartdns,surge,routeros,sing-box"
+  ENV_BRANCHS: "list,smartdns,surge,routeros,sing-box,clash"
 
 jobs:
   build:
