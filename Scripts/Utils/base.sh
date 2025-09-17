@@ -139,6 +139,17 @@ function handle_to_clash_domain_rule_providers() {
     # 写入文件头
     echo 'payload:' >"$target_file_path"
 
-    # 原样添加域名列表，每行前添加"  - "
-    sed 's/^/  - "/;s/$/"/' "$source_file_path" >>"$target_file_path"
+    # 使用 awk 来处理文件内容
+    # - 如果行以 '.' 开头 (正则表达式 /^\./)
+    #   则输出 '  - "+<原内容>"'
+    # - 否则
+    #   输出 '  - "<原内容>"'
+    awk '
+    {
+        if ($0 ~ /^\./) {
+            print "  - \"+" $0 "\""
+        } else {
+            print "  - \"" $0 "\""
+        }
+    }' "$source_file_path" >>"$target_file_path"
 }
