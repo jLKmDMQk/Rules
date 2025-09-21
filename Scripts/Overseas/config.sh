@@ -23,7 +23,6 @@ geosite_filenames=(
     "category-browser-!cn@!cn"
     "category-cas@!cn"
     "category-cryptocurrency@!cn"
-    "category-dev@!cn"
     "category-ecommerce@!cn"
     "category-entertainment@!cn"
     "category-ipfs@!cn"
