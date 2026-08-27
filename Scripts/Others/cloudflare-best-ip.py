@@ -80,9 +80,13 @@ def select_best_ips(data):
 
 if __name__ == "__main__":
     best_ips = select_best_ips(fetch_data())
+    ips = [ip for _, ip, _, _ in best_ips]
 
     Path("./result/list/cf-best-ip.list").write_text(
-        "".join(f"{ip}\n" for _, ip, _, _ in best_ips), encoding="utf-8"
+        "".join(f"{ip}\n" for ip in ips), encoding="utf-8"
+    )
+    Path("./result/list/cf-best-ip-hosts.list").write_text(
+        f"regexp:.+ {' '.join(ips)}\n", encoding="utf-8"
     )
 
     for label, ip, bandwidth, ping in best_ips:
