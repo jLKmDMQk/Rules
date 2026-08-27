@@ -10,6 +10,11 @@ import urllib.request
 from pathlib import Path
 
 
+SURGE_DOMAINS = [
+    "*.hybgzs.com",
+]
+
+
 def parse_metric(value):
     match = re.fullmatch(r"\s*(\d+(?:\.\d+)?)\s*[a-zA-Z/%]*\s*", str(value))
     if not match:
@@ -81,12 +86,26 @@ def select_best_ips(data):
 if __name__ == "__main__":
     best_ips = select_best_ips(fetch_data())
     ips = [ip for _, ip, _, _ in best_ips]
+    surge_ips = ", ".join(ips)
+    surge_host_rules = "".join(
+        f"{domain} = {surge_ips}\n" for domain in SURGE_DOMAINS
+    )
+
+    Path("./result/list").mkdir(parents=True, exist_ok=True)
+    Path("./result/surge").mkdir(parents=True, exist_ok=True)
 
     Path("./result/list/cf-best-ip.list").write_text(
         "".join(f"{ip}\n" for ip in ips), encoding="utf-8"
     )
     Path("./result/list/cf-best-ip-hosts.list").write_text(
         f"regexp:.+ {' '.join(ips)}\n", encoding="utf-8"
+    )
+    Path("./result/surge/cloudflare-best-ip.sgmodule").write_text(
+        "#!name=Cloudflare Best IP\n"
+        "#!desc=Use optimized Cloudflare IPv4\n\n"
+        "[Host]\n"
+        f"{surge_host_rules}",
+        encoding="utf-8",
     )
 
     for label, ip, bandwidth, ping in best_ips:
