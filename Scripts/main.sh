@@ -22,6 +22,7 @@ scripts=(
     "Others/Github.py"
     "Others/SharePoint.py"
     "Others/china-ip.sh"
+    "Others/cloudflare-best-ip.py"
     "Others/cloudflare-ip.sh"
     "Others/cernet.sh"
     "Others/cmcc-ip.sh"
