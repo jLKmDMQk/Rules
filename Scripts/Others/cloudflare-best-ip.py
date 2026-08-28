@@ -70,15 +70,21 @@ def select_best_ips(data):
             except (KeyError, TypeError, ValueError):
                 continue
 
-            candidates.append((bandwidth, -ping, str(ip)))
+            if bandwidth < 100:
+                continue
+
+            candidates.append((bandwidth, ping, str(ip)))
 
         if not candidates:
-            raise RuntimeError(f"{label}线路没有可用的 IPv4 数据")
+            print(f"{label}: 没有带宽不低于 100mb 的 IPv4，已跳过")
+            continue
 
-        bandwidth, negative_ping, ip = max(
-            candidates, key=lambda candidate: candidate[:2]
-        )
-        selected.append((label, ip, bandwidth, -negative_ping))
+        candidates.sort(key=lambda candidate: (-candidate[0], candidate[1]))
+        for bandwidth, ping, ip in candidates[:2]:
+            selected.append((label, ip, bandwidth, ping))
+
+    if not selected:
+        raise RuntimeError("没有带宽不低于 100mb 的 IPv4 数据")
 
     return selected
 
