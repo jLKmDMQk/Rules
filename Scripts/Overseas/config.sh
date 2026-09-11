@@ -42,3 +42,7 @@ geosite_filenames=(
     "openai@!cn"
     "stackexchange@!cn"
 )
+
+excluded_geosite_filenames=(
+    "apple@all"
+)

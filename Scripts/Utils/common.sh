@@ -26,6 +26,44 @@ function sites_common_handle() {
         done
     fi
 
+    if [ ${#excluded_geosite_filenames[@]} -gt 0 ]; then
+        excluded_domain_raw_list_file="$temp_dir/domain.excluded.raw.list"
+        for filename in "${excluded_geosite_filenames[@]}"; do
+            handle_rule_set_to_domain_list "$filename" "$domain_raw_file" "$excluded_domain_raw_list_file"
+        done
+
+        awk -F '\t' '
+            NR == FNR {
+                domain = $2
+                if (sub(/^\./, "", domain)) {
+                    excluded_suffixes[domain] = 1
+                } else {
+                    excluded_domains[domain] = 1
+                }
+                next
+            }
+            {
+                domain = $2
+                sub(/^\./, "", domain)
+                excluded = domain in excluded_domains
+                suffix = domain
+                while (!excluded) {
+                    if (suffix in excluded_suffixes) {
+                        excluded = 1
+                        break
+                    }
+                    if (!sub(/^[^.]+\./, "", suffix)) {
+                        break
+                    }
+                }
+                if (!excluded) {
+                    print
+                }
+            }
+        ' "$excluded_domain_raw_list_file" "$domain_raw_list_file" >"$domain_raw_file"
+        cp "$domain_raw_file" "$domain_raw_list_file"
+    fi
+
     sort_and_deduplicate "$domain_raw_list_file" "$domain_list_file"
 
     if [ -n "$target_1_file" ]; then
