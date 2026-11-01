@@ -29,6 +29,8 @@ jobs:
 
       - name: Handle Data
         working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x ./Scripts/main.sh
           ./Scripts/main.sh
