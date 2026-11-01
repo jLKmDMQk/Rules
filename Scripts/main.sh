@@ -21,6 +21,7 @@ scripts=(
 
     "Others/Github.py"
     "Others/SharePoint.py"
+    "Others/ai-ip.py"
     "Others/china-ip.sh"
     "Others/cloudflare-ip.sh"
     "Others/cernet.sh"
@@ -38,5 +39,5 @@ git clone --depth=1 https://github.com/blackmatrix7/ios_rule_script.git ./depend
 for script in "${scripts[@]}"; do
     script_file="./Scripts/$script"
     chmod +x "$script_file"
-    $script_file
+    "$script_file" || exit $?
 done
