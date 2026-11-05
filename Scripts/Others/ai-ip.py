@@ -5,6 +5,8 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from time import sleep
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -20,7 +22,25 @@ def resolve_aws_endpoint(hostname):
     # 使用 DoH，避免系统 DNS 的 fake-ip 和本机 IPv6 配置影响结果。
     for record_type, version in ((1, 4), (28, 6)):
         query = urlencode({"name": hostname, "type": record_type})
-        data = json.loads(fetch_text(f"https://dns.google/resolve?{query}"))
+        # 对临时连接故障和 SERVFAIL 有限重试，耗尽后仍按失败处理。
+        for attempt in range(3):
+            try:
+                data = json.loads(fetch_text(f"https://dns.google/resolve?{query}"))
+            except (URLError, TimeoutError) as error:
+                if isinstance(error, HTTPError) or attempt == 2:
+                    raise
+                failure = str(error)
+            else:
+                if data["Status"] != 2 or attempt == 2:
+                    break
+                failure = "SERVFAIL"
+            delay = 2 ** (attempt + 1)
+            print(
+                f"DNS 查询失败：{hostname}，类型 {record_type}，{failure}，"
+                f"{delay} 秒后重试（{attempt + 2}/3）",
+                flush=True,
+            )
+            sleep(delay)
         if data["Status"] == 3:  # NXDOMAIN：该区域尚未提供公开端点。
             continue
         if data["Status"] != 0 or data.get("TC", False):
